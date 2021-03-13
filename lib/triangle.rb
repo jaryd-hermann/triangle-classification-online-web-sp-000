@@ -9,11 +9,9 @@ class Triangle
    end
 
 def kind(a,b,c)
-  if [a,b,c].max < [a,b,c].inject(:+)/2.0
-    return true
-  else
-    raise TriangleError
-  end
+  if @sides.any?{ |side|  side <= 0 } || ( (@sides[0] + @sides[1]) <= @sides[2] )
+      raise TriangleError
+    end 
 end
 
 class TriangleError < StandardError
