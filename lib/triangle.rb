@@ -8,14 +8,10 @@ def initialize(a:,b:, c:)
 end
 
 def kind(a,b,c)
-  if (a+b > c) || (a+c>b) || (b+c>a)
-    return true
-  elsif a+c>b
-    return true
-  elsif b+c>a
+  if [a,b,c].max < [a,b,c].inject(:+)/2.0
     return true
   else
-    return false
+    raise TriangleError
   end
 end
 
