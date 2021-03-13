@@ -1,11 +1,12 @@
 class Triangle
-attr_accessor :a, :b, :c
-
-def initialize(a:,b:, c:)
-  @a = a
-  @b = b
-  @c = c
-end
+  attr_accessor :sides
+   
+   @sides = []
+   
+   def initialize (side1, side2, side3)
+     @sides = [side1, side2, side3]
+     @sides.sort!
+   end
 
 def kind(a,b,c)
   if [a,b,c].max < [a,b,c].inject(:+)/2.0
