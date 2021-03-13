@@ -1,19 +1,22 @@
 class Triangle
-attr_accessor :side_1, :side_2, :side_3
+attr_accessor :a, :b, :c
 
-def initialize(side_1:,side_2:, side_3:)
-  @side_1 = side_1
-  @side_2 = side_2
-  @side_3 = side_3
+def initialize(a:,b:, c:)
+  @a = a
+  @b = b
+  @c = c
 end
 
-def kind
-  if
-
+def kind(a,b,c)
+  if (a+b > c) || (a+c>b) || (b+c>a)
+    return true
+  elsif a+c>b
+    return true
+  elsif b+c>a
+    return true
   else
-
-  end 
-
+    return false
+  end
 end
 
 class TriangleError < StandardError
